@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FocusTube Design System - Clean, distraction-free learning platform */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 210 17% 98%;
+    --foreground: 215 25% 27%;
+    --surface: 210 17% 95%;
+
+    /* Focus-friendly Primary Colors */
+    --primary: 213 94% 68%; /* Calming blue for focus */
+    --primary-light: 213 94% 78%;
+    --primary-dark: 213 94% 58%;
+    --primary-foreground: 210 17% 98%;
+
+    /* Educational Secondary Colors */
+    --secondary: 142 76% 36%; /* Learning green */
+    --secondary-light: 142 76% 46%;
+    --secondary-foreground: 210 17% 98%;
+
+    /* Card & Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --card-hover: 210 17% 96%;
+
+    /* Interactive Elements */
+    --accent: 213 94% 68%;
+    --accent-foreground: 210 17% 98%;
+    --accent-hover: 213 94% 78%;
+
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 210 17% 98%;
+    --warning: 43 96% 56%;
+    --warning-foreground: 215 25% 27%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 17% 98%;
+
+    /* Neutral Colors */
+    --muted: 210 17% 95%;
+    --muted-foreground: 215 16% 47%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 213 94% 68%;
+
+    /* Content Rating Colors */
+    --rating-excellent: 142 76% 36%; /* Deep green for excellent content */
+    --rating-good: 213 94% 68%; /* Blue for good content */
+    --rating-basic: 43 96% 56%; /* Yellow for basic content */
+
+    /* Focus Mode Colors */
+    --focus-active: 142 76% 36%;
+    --focus-inactive: 215 16% 47%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 94% 78%));
+    --gradient-secondary: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
+    --gradient-surface: linear-gradient(180deg, hsl(210 17% 98%), hsl(210 17% 95%));
+
+    /* Shadows */
+    --shadow-soft: 0 2px 8px -2px hsl(213 94% 68% / 0.1);
+    --shadow-medium: 0 4px 16px -4px hsl(213 94% 68% / 0.15);
+    --shadow-focus: 0 0 0 2px hsl(213 94% 68% / 0.3);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 215 28% 17%;
+    --foreground: 210 17% 98%;
+    --surface: 215 28% 22%;
+
+    --primary: 213 94% 68%;
+    --primary-light: 213 94% 78%;
+    --primary-dark: 213 94% 58%;
+    --primary-foreground: 215 28% 17%;
+
+    --secondary: 142 76% 36%;
+    --secondary-light: 142 76% 46%;
+    --secondary-foreground: 210 17% 98%;
+
+    --card: 215 28% 22%;
+    --card-foreground: 210 17% 98%;
+    --card-hover: 215 28% 25%;
+
+    --accent: 213 94% 68%;
+    --accent-foreground: 215 28% 17%;
+    --accent-hover: 213 94% 78%;
+
+    --muted: 215 28% 22%;
+    --muted-foreground: 215 16% 65%;
+    --border: 215 28% 30%;
+    --input: 215 28% 30%;
+    --ring: 213 94% 68%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Focus mode styles */
+  .focus-mode {
+    @apply bg-surface;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Content rating badges */
+  .rating-excellent {
+    @apply bg-success/10 text-success border border-success/20;
+  }
+
+  .rating-good {
+    @apply bg-primary/10 text-primary border border-primary/20;
+  }
+
+  .rating-basic {
+    @apply bg-warning/10 text-warning border border-warning/20;
+  }
+
+  /* Focus button states */
+  .focus-toggle-active {
+    @apply bg-focus-active text-white shadow-focus;
+  }
+
+  .focus-toggle-inactive {
+    @apply bg-muted text-focus-inactive;
+  }
+}
